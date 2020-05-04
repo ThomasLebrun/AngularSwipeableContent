@@ -1,0 +1,99 @@
+@import '_variables.scss';
+
+// To reset the main content at its starting position
+@keyframes reset-main-content {
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+// Called when user scroll more that the middle of the screen, from right to left
+@keyframes right-to-left-left-content {
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+@keyframes right-to-left-main-content {
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes right-to-left-right-content {
+  50% {
+    width: 0%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+// Called when user scroll more that the middle of the screen, from left to right
+@keyframes left-to-right-left-content {
+  50% {
+    width: 0%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+@keyframes left-to-right-main-content {
+  50% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes left-to-right-right-content {
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+.actions {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  background: white;
+
+  .left-content {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .middle-content {
+    width: 50%;
+  }
+
+  .right-content {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.main-content-container {
+  position: relative;
+
+  .main-content {
+    position: relative;
+    background: white;
+  }
+}

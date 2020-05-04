@@ -1,0 +1,16 @@
+<div class="actions" *ngIf="leftContent || rightContent">
+  <div class="left-content" *ngIf="leftContent">
+    <ng-container [ngTemplateOutlet]="leftContent"></ng-container>
+  </div>
+
+  <div class="middle-content"></div>
+
+  <div class="right-content" *ngIf="rightContent">
+    <ng-container [ngTemplateOutlet]="rightContent"></ng-container>
+  </div>
+</div>
+<div class="main-content-container" (panmove)="move($event.deltaX)" (panend)="stop($event.deltaX)">
+  <div class="main-content">
+    <ng-container [ngTemplateOutlet]="mainContent" [ngTemplateOutletContext]="{ context: context }"></ng-container>
+  </div>
+</div>
